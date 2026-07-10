@@ -1,41 +1,56 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
-
 import { Platform } from 'react-native';
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+// Brand Colors (exact hex codes)
+export const BrandColors = {
+  cherryPunch: '#D5004A',
+  chartreuse: '#D7FA32',
+  
+  // Accent Pinks
+  electricPink: '#FF2E9B',
+  neonPink: '#EC2B7A',
+  candyPink: '#FF67E7',
+  fluorescentPurple: '#FF00FF',
+  
+  // Accent Yellows
+  neonYellow: '#FDFF42',
+  canaryYellow: '#FFF338',
+  lime: '#C1FF1A',
+};
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    text: '#1A1A1A', // Dark near-black text on glass cards
+    secondaryText: '#999999', // Muted gray text
+    background: '#FAFAFA', // Clean off-white base
+    tint: BrandColors.cherryPunch,
+    primary: BrandColors.cherryPunch,
+    secondary: BrandColors.chartreuse,
+    card: 'rgba(255, 255, 255, 0.75)', // Glass base card
+    border: 'rgba(255, 255, 255, 0.4)', // Near-invisible white border
+    icon: '#999999',
+    tabIconDefault: '#999999',
+    tabIconSelected: BrandColors.cherryPunch,
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    text: '#FFFFFF',
+    secondaryText: '#888888',
+    background: '#0B0104', // Deep cherry-black background
+    tint: BrandColors.chartreuse,
+    primary: BrandColors.chartreuse,
+    secondary: BrandColors.cherryPunch,
+    card: 'rgba(21, 3, 10, 0.75)', // Dark glass base card
+    border: 'rgba(255, 255, 255, 0.1)',
+    icon: '#888888',
+    tabIconDefault: '#888888',
+    tabIconSelected: BrandColors.chartreuse,
   },
 };
 
 export const Fonts = Platform.select({
   ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
     sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
     serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
     rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
     mono: 'ui-monospace',
   },
   default: {
@@ -51,3 +66,4 @@ export const Fonts = Platform.select({
     mono: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
   },
 });
+
